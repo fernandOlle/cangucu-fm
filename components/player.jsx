@@ -2,7 +2,7 @@ import React from 'react';
 
 const Player = () => {
   return (
-    <div>
+    <div className='drop-shadow-[35_35px_35px_rgba(0,0,0,0.8)]'>
       <audio className='shadow-lg rounded-lg p-0 mb-8 w-full' controls autoplay>
         <source src='http://r15.ciclano.io:4445/stream' type='audio/mpeg' />
       </audio>
