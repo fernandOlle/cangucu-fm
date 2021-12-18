@@ -60,11 +60,13 @@ const FeaturedPosts = () => {
   const customRightArrow = (
     <div
       className='absolute arrow-btn right-0 text-center py-3 cursor-pointer bg-orange-600 rounded-full'
-      style={{ right: '0px' }}
+      style={{ right: '0px', paddingLeft: '25px' }}
+
+      // style={{ justifyContet: 'right' }}
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'
-        className='h-6 w-6 text-white w-full'
+        className='h-6 w-6 text-white w-full '
         fill='none'
         viewBox='0 0 24 24'
         stroke='currentColor'

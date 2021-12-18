@@ -18,14 +18,17 @@ const Header = () => {
         <div className='md:float-left block'>
           <Link href='/'>
             <span className='cursor-pointer font-bold text-4xl text-white'>
-              Canguçu FM
+              <span className='text-5xl text-orange-700'>C</span>
+              <span className='text-gray-400'>anguçu</span>
+              <span className='text-5xl '> 103,3</span>
+              <span className='text-4xl text-orange-600'> {'  '} FM</span>
             </span>
           </Link>
         </div>
         <div className='hidden md:float-left md:contents'>
           {categories.map((category, index) => (
             <Link key={category.slug} href={`/category/${category.slug}`}>
-              <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
+              <span className='text-xl md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
                 {category.name}
               </span>
             </Link>
