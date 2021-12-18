@@ -29,15 +29,15 @@ const PostDetails = ({ post }) => {
           <PostDetail post={post} />
           <Author author={post.author} />
           <AdjacentPosts slug={post.slug} createdAt={post.createdAt} />
-          <CommentsForm slug={post.slug} />
-          <Comments slug={post.slug} />
+          {/* <CommentsForm slug={post.slug} />
+          <Comments slug={post.slug} /> */}
         </div>
         <div className='col-span-1 lg:col-span-4'>
           <div className='relative lg:sticky top-8'>
             <Player />
             <PostWidget
               slug={post.slug}
-              categories={post.categories.map((category) => category)}
+              categories={post.categories.map((category) => category.slug)}
             />
             <Categories />
           </div>

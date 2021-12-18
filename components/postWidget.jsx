@@ -3,7 +3,7 @@ import Image from 'next/image';
 import moment from 'moment';
 import Link from 'next/link';
 
-export const grpahCMSImageLoader = ({ src }) => src;
+import { grpahCMSImageLoader } from '../util';
 import { getSimilarPosts, getRecentPosts } from '../services';
 
 const PostWidget = ({ categories, slug }) => {

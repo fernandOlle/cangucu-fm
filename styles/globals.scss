@@ -46,6 +46,24 @@ body {
   }
 }
 
+.glow {
+  transition: all 300ms ease-in-out;
+  &:hover {
+    padding: 0.2em;
+    color: white;
+  }
+}
+
+.titleHint {
+  background-color: transparent;
+  border-radius: 10px;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    padding: 0.3em;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
 .react-multi-carousel-list {
   //
   & .arrow-btn {
@@ -60,12 +78,22 @@ body {
     width: 50px;
     &:hover {
       & .rightArrow {
+        padding: 0.1em;
         box-shadow: -50px 0px 10px 0px #ff5700;
       }
       & .leftArrow {
+        padding: 0.1em;
         box-shadow: 50px 0px 10px 0px #ff5700;
       }
     }
+  }
+}
+
+.cardPop {
+  transition: all 300ms ease-in-out;
+  &:hover {
+    padding: 0.2em;
+    color: white;
   }
 }
 

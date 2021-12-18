@@ -37,7 +37,7 @@ const FeaturedPosts = () => {
 
   const customLeftArrow = (
     <div
-      className='absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-orange-600 rounded-full '
+      className='absolute drop-shadow-2xl arrow-btn left-0 text-center py-3 cursor-pointer bg-orange-600 rounded-full '
       style={{ left: '0px' }}
     >
       <svg
