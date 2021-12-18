@@ -1,50 +1,49 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import moment from 'moment';
 import Link from 'next/link';
 
-import moment from 'moment';
-
-import { getRecentPosts, getSimilarPosts } from '../services';
+export const grpahCMSImageLoader = ({ src }) => src;
+import { getSimilarPosts, getRecentPosts } from '../services';
 
 const PostWidget = ({ categories, slug }) => {
-  const [relatedPost, setRelatedPost] = useState([]);
+  const [relatedPosts, setRelatedPosts] = useState([]);
 
   useEffect(() => {
     if (slug) {
-      getSimilarPosts(categories, slug).then((result) =>
-        setRelatedPost(result)
-      );
+      getSimilarPosts(categories, slug).then((result) => {
+        setRelatedPosts(result);
+      });
     } else {
-      getRecentPosts().then((result) => setRelatedPost(result));
+      getRecentPosts().then((result) => {
+        setRelatedPosts(result);
+      });
     }
   }, [slug]);
 
-  console.log(relatedPost);
-
   return (
-    <div className='bg-white shadow-lg rounded-lg p-8 mb-8'>
-      <h3 className='text-xl mb-8 font-semibold border-b pb-4 '>
-        {slug ? 'Posts Relacionados' : 'Posts Recentes'}
+    <div className='bg-white shadow-lg rounded-lg p-8 pb-12 mb-8'>
+      <h3 className='text-xl mb-8 font-semibold border-b pb-4'>
+        {slug ? 'Posts Relacionados' : 'Pots Recentes'}
       </h3>
-      {relatedPost.map((post) => (
-        <div key={post.title} className='flex items-center w-full mb-4'>
+      {relatedPosts.map((post, index) => (
+        <div key={index} className='flex items-center w-full mb-4'>
           <div className='w-16 flex-none'>
-            <img
+            <Image
+              loader={grpahCMSImageLoader}
               alt={post.title}
               height='60px'
               width='60px'
+              unoptimized
               className='align-middle rounded-full'
               src={post.featuredImage.url}
-            />{' '}
+            />
           </div>
-          <div className='flex-grow ml-4 '>
+          <div className='flex-grow ml-4'>
             <p className='text-gray-500 font-xs'>
               {moment(post.createdAt).format('DD/MM/YYYY')}
             </p>
-            <Link
-              href={`/post/${post.slug}`}
-              key={post.title}
-              className='text-md'
-            >
+            <Link href={`/post/${post.slug}`} className='text-md' key={index}>
               {post.title}
             </Link>
           </div>
