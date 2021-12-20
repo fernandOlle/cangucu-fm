@@ -13,8 +13,10 @@ export default function Home({ posts }) {
           ))}
         </div>
         <div className='lg:col-span-4 col-span-1'>
-          <div className='lg:sticky relative top-8'>
-            <Player />
+          <div className=' lg:sticky relative lg:top-28'>
+            <div class='hidden lg:block'>
+              <Player />
+            </div>
             <PostWidget />
             <Categories />
           </div>

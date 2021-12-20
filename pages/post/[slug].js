@@ -33,8 +33,10 @@ const PostDetails = ({ post }) => {
           <Comments slug={post.slug} /> */}
         </div>
         <div className='col-span-1 lg:col-span-4'>
-          <div className='relative lg:sticky top-8'>
-            <Player />
+          <div className='relative lg:sticky lg:top-28'>
+            <div class='hidden lg:block'>
+              <Player />
+            </div>
             <PostWidget
               slug={post.slug}
               categories={post.categories.map((category) => category.slug)}

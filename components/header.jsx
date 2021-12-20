@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import 'react-multi-carousel/lib/styles.css';
 
+import { Player } from './';
 import { getCategories } from '../services';
 
 const Header = () => {
@@ -15,8 +16,8 @@ const Header = () => {
   }, []);
 
   return (
-    <div className='container mx-auto px-10 mb-8 '>
-      <div className='border-b w-full inline-block border-green-800 py-8'>
+    <div className='headerColor mb-8 sticky top-0 z-50'>
+      <div className='border-b w-full inline-block border-green-800 py-4 px-16 md:px-32'>
         <div className='md:float-left block'>
           <Link href='/'>
             <span className='titleHint cursor-pointer font-bold text-4xl text-white'>
@@ -36,6 +37,9 @@ const Header = () => {
             </Link>
           ))}
         </div>
+      </div>
+      <div className='lg:hidden mt-2 mx-2'>
+        <Player />
       </div>
     </div>
   );
