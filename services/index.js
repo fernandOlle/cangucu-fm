@@ -45,6 +45,9 @@ export const getCategories = async () => {
       categories {
         name
         slug
+        logo {
+          url
+        }
       }
     }
   `;
@@ -52,6 +55,40 @@ export const getCategories = async () => {
   const result = await request(graphqlAPI, query);
 
   return result.categories;
+};
+
+export const getSocialMedias = async () => {
+  const query = gql`
+    query GetMedias {
+      socialMedias {
+        name
+        socialMediaLogos {
+          url
+        }
+        link
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+
+  return result.socialMedias;
+};
+
+export const getRadioLogo = async () => {
+  const query = gql`
+    query GetRadioLogo {
+      radioLogos {
+        logo {
+          url
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+
+  return result.logo;
 };
 
 export const getPostDetails = async (slug) => {

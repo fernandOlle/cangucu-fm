@@ -13,7 +13,7 @@ export default function Home({ posts }) {
           ))}
         </div>
         <div className='lg:col-span-4 col-span-1'>
-          <div className=' lg:sticky relative lg:top-28'>
+          <div className=' lg:sticky relative lg:top-36'>
             <div class='hidden lg:block'>
               <Player />
             </div>

@@ -33,7 +33,7 @@ const PostDetails = ({ post }) => {
           <Comments slug={post.slug} /> */}
         </div>
         <div className='col-span-1 lg:col-span-4'>
-          <div className='relative lg:sticky lg:top-28'>
+          <div className='relative lg:sticky lg:top-36'>
             <div class='hidden lg:block'>
               <Player />
             </div>

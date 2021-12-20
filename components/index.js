@@ -11,3 +11,4 @@ export { default as FeaturedPostCard } from './featuredPostCard';
 export { default as Player } from './player';
 export { default as AdjacentPostCard } from './adjacentPostCard';
 export { default as Loader } from './loader';
+export { default as Footer } from './footer';

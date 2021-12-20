@@ -13,16 +13,18 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className='bg-white shadow-lg rounded-lg p-8 pb-12 mb-8'>
-      <h3 className='text-xl mb-8 font-semibold border-b pb-4'>Explore Mais</h3>
+    <div className='bg-white shadow-lg rounded-lg p-6 pb-8 mb-2'>
+      <h3 className='text-xl mb-8 font-semibold border-b pb-2'>Explore Mais</h3>
       {categories.map((category, index) => (
         <Link key={index} href={`/category/${category.slug}`}>
           <span
-            className={`cursor-pointer block ${
+            className={`cursor-pointer flex align-center ${
               index === categories.length - 1 ? 'border-b-0' : 'border-b'
-            } pb-3 mb-3`}
+            } pb-2 mb-2`}
           >
-            {category.name}
+            <img src={category.logo.url} className='h-10 w-10' />
+            {'   '}
+            <span className='ml-5 mt-3'> {category.name} </span>
           </span>
         </Link>
       ))}

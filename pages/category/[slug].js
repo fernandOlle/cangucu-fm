@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import { getCategories, getCategoryPost } from '../../services';
-import { PostCard, Categories, Loader } from '../../components';
+import { PostCard, Categories, Loader, Player } from '../../components';
 
 const CategoryPost = ({ posts }) => {
   const router = useRouter();
@@ -20,7 +20,10 @@ const CategoryPost = ({ posts }) => {
           ))}
         </div>
         <div className='col-span-1 lg:col-span-4'>
-          <div className='relative lg:sticky top-8'>
+          <div className='relative lg:sticky lg:top-36'>
+            <div class='hidden lg:block'>
+              <Player />
+            </div>
             <Categories />
           </div>
         </div>
