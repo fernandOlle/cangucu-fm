@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <div className='headerColor mb-8 sticky top-0 z-50'>
-      <div className='border-b w-full inline-block border-green-800 py-4 px-16 md:px-40'>
+      <div className='border-b w-full inline-block border-red-900 rounded-2xl py-4 px-16 md:px-40'>
         <div className='md:float-left block '>
           <Link href='/'>
             <span className='flex titleHint cursor-pointer font-bold text-4xl text-white items-center'>

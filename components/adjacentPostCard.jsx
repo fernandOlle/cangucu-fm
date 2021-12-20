@@ -21,7 +21,7 @@ const AdjacentPostCard = ({ post, position }) => (
       <span className='z-10 cursor-pointer absolute w-full h-full' />
     </Link>
     {position === 'LEFT' && (
-      <div className='absolute arrow-btn bottom-5 text-center py-3 cursor-pointer bg-green-900 left-4 rounded-full'>
+      <div className='absolute arrow-btn bottom-5 text-center py-3 cursor-pointer bg-red-900 left-4 rounded-full'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           className='h-6 w-6 text-white w-full'
@@ -39,7 +39,7 @@ const AdjacentPostCard = ({ post, position }) => (
       </div>
     )}
     {position === 'RIGHT' && (
-      <div className='absolute arrow-btn bottom-5 text-center py-3 cursor-pointer bg-green-900 right-4 rounded-full'>
+      <div className='absolute arrow-btn bottom-5 text-center py-3 cursor-pointer bg-red-900 right-4 rounded-full'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           className='h-6 w-6 text-white w-full'
