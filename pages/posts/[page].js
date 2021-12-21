@@ -45,7 +45,11 @@ export default function PaginatedPosts({ currentPageNumber, posts, pageInfo }) {
           )}
 
           {pageInfo.hasPreviousPage && (
-            <div className='flex items-center justify-center'>
+            <div
+              className={`flex items-center ${
+                pageInfo.hasNextPage && pageInfo.hasPreviousPage ? 'ml-8' : ''
+              } justify-center`}
+            >
               <Link href={`/posts/${currentPageNumber - 1}`}>
                 <span className='text-center transition duration-500 ease-in-out transform hover:-translate-y-3 hover:font-semibold inline-block bg-yellow-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer'>
                   Página Anterior

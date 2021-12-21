@@ -19,7 +19,7 @@ const Footer = () => {
           ✆ Fale conosco <br />
           <span className=' font-normal text-xl'>
             WhatsApp: +55 (53) 98400-0000 <br />
-            Fixo: +55 (53) 3242-0000 <br />
+            Fixo: +55 (53) 3252-2811 <br />
             Email: contato@cangucu.fm
           </span>
         </span>
