@@ -9,8 +9,14 @@ export default function Home({ posts }) {
   const windowSize = useWindowSize();
 
   return (
-    <div className='container mx-auto px-10 mb-8'>
-      <FeaturedPosts />
+    <div
+      className={`container mx-auto px-10 windowSize ${
+        windowSize.width <= 1024 && 'py-20'
+      } mb-8`}
+    >
+      <div className='hidden lg:block'>
+        <FeaturedPosts />
+      </div>
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
         <div className='lg:col-span-8 col-span-1'>
           {posts.map((post, index) => (

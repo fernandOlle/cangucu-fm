@@ -30,7 +30,7 @@ const Header = () => {
     <div className='headerColor mb-8 sticky top-0 h-full h-28 z-50'>
       <div
         className={`border-b w-full  inline-block border-red-900 h-full rounded-2xl py-2 px-16 ${
-          windowSize.width >= 1500 ? 'md:px-56' : 'md:pl-56 lg:pr-36'
+          windowSize.width >= 1500 ? 'md:px-60' : 'md:pl-56 lg:pr-36'
         }`}
       >
         <div className='md:float-left block '>
@@ -47,7 +47,7 @@ const Header = () => {
             </span>
           </Link>
         </div>
-        <div className='hidden md:float-left  md:contents'>
+        <div className='hidden md:float-left md:contents'>
           {categories.map((category, index) => (
             <Link key={category.slug} href={`/category/${category.slug}`}>
               <span className='hidden lg:block pt-5 glow text-xl md:float-right mt-3 text-gray-400 ml-4 font-semibold cursor-pointer '>
@@ -57,8 +57,8 @@ const Header = () => {
           ))}
         </div>
       </div>
-      <div className='lg:hidden mt-2 mx-2'>
-        {windowSize.width < 1024 && <Player />}
+      <div className='lg:hidden  mt-2 mx-2'>
+        {windowSize.width < 1024 && <Player c />}
       </div>
     </div>
   );
