@@ -24,7 +24,10 @@ const Categories = () => {
           >
             <img src={category.logo.url} className='h-10 w-10' />
             {'   '}
-            <span className='ml-5 mt-3'> {category.name} </span>
+
+            <span className='transition duration-500 ease-in-out transform hover:-translate-y-3 hover:font-semibold hover:text-gray-700 cursor-pointer ml-5 mt-3'>
+              {category.name}{' '}
+            </span>
           </span>
         </Link>
       ))}

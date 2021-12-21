@@ -39,12 +39,12 @@ const PostWidget = ({ categories, slug }) => {
               src={post.featuredImage.url}
             />
           </div>
-          <div className='flex-grow ml-4'>
+          <div className='flex-grow transition duration-500 ease-in-out transform hover:-translate-y-3 hover:font-semibold hover:text-gray-700 ml-4'>
             <p className='text-gray-500 font-xs'>
               {moment(post.createdAt).format('DD/MM/YYYY')}
             </p>
             <Link href={`/post/${post.slug}`} className='text-md' key={index}>
-              {post.title}
+              <span className='cursor-pointer'>{post.title}</span>
             </Link>
           </div>
         </div>
