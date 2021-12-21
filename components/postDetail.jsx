@@ -62,7 +62,7 @@ const PostDetail = ({ post }) => {
 
   return (
     <>
-      <div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8'>
+      <div className='bg-white shadow-2xl rounded-lg drop-shadow-2xlrounded-lg lg:p-8 pb-12 mb-8'>
         <div className='relative overflow-hidden shadow-md mb-6'>
           <img
             src={post.featuredImage.url}
@@ -87,7 +87,7 @@ const PostDetail = ({ post }) => {
             <div className='font-medium text-gray-700'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6 inline mr-2 text-green-500'
+                className='h-6 w-6 inline mr-2 text-yellow-500'
                 fill='none'
                 viewBox='0 0 24 24'
                 stroke='currentColor'

@@ -13,7 +13,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <div className='footerColor bottom-0 w-full h-50 '>
+    <div className='footerColor shadow-2xl drop-shadow-2xl bottom-0 w-full h-50 '>
       <div className='border-t w-full flex border-red-900 rounded-2xl py-4 px-16 md:px-96 pb-10 content-between'>
         <span className='font-semibold text-xl flex-auto t'>
           ✆ Fale conosco <br />
@@ -28,9 +28,15 @@ const Footer = () => {
           {medias.map((media, index) => (
             <Link key={index} href={`${media.link}`}>
               <span className={`cursor-pointer flex align-center`}>
-                <img src={media.socialMediaLogos.url} className='h-10 w-10' />
+                <img
+                  src={media.socialMediaLogos.url}
+                  className='h-10 w-10 hover:shadow-xl hover:drop-shadow-xl'
+                />
                 {'   '}
-                <span className='font-normal ml-5 mt-3'> {media.name} </span>
+                <span className='font-normal ml-5 mt-3 duration-500 ease-in-out transform  hover:text-shadow-2xl hover:text-gray-400'>
+                  {' '}
+                  {media.name}{' '}
+                </span>
               </span>
             </Link>
           ))}

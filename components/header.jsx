@@ -27,7 +27,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className='headerColor mb-8 sticky top-0 h-full h-28 z-50'>
+    <div className='headerColor shadow-2xl drop-shadow-2xl mb-8 sticky top-0 h-full h-28 z-50'>
       <div
         className={`border-b w-full  inline-block border-red-900 h-full rounded-2xl py-2 px-16 ${
           windowSize.width >= 1500 ? 'md:px-60' : 'md:pl-56 lg:pr-36'

@@ -13,7 +13,7 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className='bg-white shadow-lg rounded-lg p-6 pb-8 mb-2'>
+    <div className='bg-white shadow-2xl drop-shadow-2xl rounded-lg p-6 pb-8 mb-2'>
       <h3 className='text-xl mb-8 font-semibold border-b pb-2'>Explore Mais</h3>
       {categories.map((category, index) => (
         <Link key={index} href={`/category/${category.slug}`}>
@@ -25,7 +25,7 @@ const Categories = () => {
             <img src={category.logo.url} className='h-10 w-10' />
             {'   '}
 
-            <span className='transition duration-500 ease-in-out transform hover:-translate-y-3 hover:font-semibold hover:text-gray-700 cursor-pointer ml-5 mt-3'>
+            <span className='transition duration-500 ease-in-out transform  hover:font-semibold hover:text-gray-700 cursor-pointer ml-5 mt-3'>
               {category.name}{' '}
             </span>
           </span>

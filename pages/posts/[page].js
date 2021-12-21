@@ -37,7 +37,7 @@ export default function PaginatedPosts({ currentPageNumber, posts, pageInfo }) {
           {pageInfo.hasNextPage && (
             <div className='flex items-center justify-center'>
               <Link href={`/posts/${currentPageNumber + 1}`}>
-                <span className='text-center transition duration-500 ease-in-out transform hover:-translate-y-3 hover:font-semibold inline-block bg-yellow-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer'>
+                <span className='text-center transition  shadow-2xl drop-shadow-2xl duration-500 ease-in-out transform hover:-translate-y-3 hover:font-semibold inline-block bg-yellow-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer'>
                   Proxima Página
                 </span>
               </Link>
@@ -51,7 +51,7 @@ export default function PaginatedPosts({ currentPageNumber, posts, pageInfo }) {
               } justify-center`}
             >
               <Link href={`/posts/${currentPageNumber - 1}`}>
-                <span className='text-center transition duration-500 ease-in-out transform hover:-translate-y-3 hover:font-semibold inline-block bg-yellow-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer'>
+                <span className='text-center transition shadow-2xl drop-shadow-2xl duration-500 ease-in-out transform hover:-translate-y-3 hover:font-semibold inline-block bg-yellow-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer'>
                   Página Anterior
                 </span>
               </Link>
