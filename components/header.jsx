@@ -24,17 +24,17 @@ const Header = () => {
   }, []);
 
   return (
-    <div className='headerColor mb-8 sticky top-0 h-full z-50'>
-      <div className='border-b w-full  inline-block border-red-900 h-full rounded-2xl py-3 px-16 md:px-40'>
+    <div className='headerColor mb-8 sticky top-0 h-full h-28 z-50'>
+      <div className='border-b w-full  inline-block border-red-900 h-full rounded-2xl py-2 px-16 md:px-56'>
         <div className='md:float-left block '>
           <Link href='/'>
             <span className='flex titleHint cursor-pointer font-bold text-4xl text-white items-center'>
               <img
                 src='https://media.graphcms.com/ZNH6KWDGQZaNDQqaM7LN'
-                className='h-20 w-20'
+                className='h-24 w-24'
               />
-              <span className='text-5xl pl-4 text-orange-700'>C</span>
-              <span className='text-gray-400'>anguçu</span>
+              {/* <span className='text-5xl pl-4 text-orange-700'>C</span>
+              <span className='text-gray-400'>anguçu</span> */}
               <span className='text-5xl pl-4 drop-shadow-2xl'> 103,3</span>
               <span className='text-4xl text-orange-600 pt-2'> {'  '} FM</span>
             </span>
@@ -43,7 +43,7 @@ const Header = () => {
         <div className='hidden md:float-left  md:contents'>
           {categories.map((category, index) => (
             <Link key={category.slug} href={`/category/${category.slug}`}>
-              <span className=' pt-4 glow text-xl md:float-right mt-2 align-middle text-gray-400 ml-4 font-semibold cursor-pointer '>
+              <span className=' pt-5 glow text-xl md:float-right mt-3 align-middle text-gray-400 ml-4 font-semibold cursor-pointer '>
                 {category.name}
               </span>
             </Link>
