@@ -5,7 +5,13 @@ import Link from 'next/link';
 import { getPageCount, getLastPosts } from '../../services/index';
 import { useWindowSize } from '../../util';
 import { FeaturedPosts } from '../../sections/index';
-import { PostCard, Categories, PostWidget, Player } from '../../components';
+import {
+  PostCard,
+  Categories,
+  PostWidget,
+  Player,
+  Loader,
+} from '../../components';
 
 const limit = 5;
 
