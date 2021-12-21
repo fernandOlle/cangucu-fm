@@ -10,7 +10,7 @@ export default function Home({ posts, pageInfo }) {
 
   return (
     <div
-      className={`container mx-auto px-10 windowSize ${
+      className={` w-full container mx-auto px-10 windowSize ${
         windowSize.width <= 1024 && 'py-20'
       } mb-8`}
     >

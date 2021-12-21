@@ -6,7 +6,9 @@ import { Layout } from '../components';
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      <Component {...pageProps} />
+      <div className='w-full'>
+        <Component {...pageProps} />
+      </div>
     </Layout>
   );
 }

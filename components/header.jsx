@@ -47,7 +47,11 @@ const Header = () => {
             </span>
           </Link>
         </div>
-        <div className='hidden md:float-left md:contents'>
+        <div
+          className={`${
+            windowSize.width <= 1100 ? 'hidden' : 'contents'
+          } md:float-left`}
+        >
           {categories.map((category, index) => (
             <Link key={category.slug} href={`/category/${category.slug}`}>
               <span className='hidden lg:block pt-5 glow text-xl md:float-right mt-3 text-gray-400 ml-4 font-semibold cursor-pointer '>

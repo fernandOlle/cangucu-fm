@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Player = ({ playing }) => {
+const Player = () => {
   return (
     <div className='shadow-2xl drop-shadow-2xl '>
       <audio
-        className='shadow-2xl drop-shadow-2xl rounded-lg p-0 mb-8 w-full'
+        className='shadow-2xl drop-shadow-2xl rounded-lg mb-8 w-full'
         controls
         autoPlay
       >
