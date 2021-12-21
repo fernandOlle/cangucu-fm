@@ -43,7 +43,7 @@ const Header = () => {
               {/* <span className='text-5xl pl-4 text-orange-700'>C</span>
               <span className='text-gray-400'>anguçu</span> */}
               <span className='text-5xl pl-4 drop-shadow-2xl'> 103,3</span>
-              <span className='text-4xl text-red-600 pt-2 pl-2'> FM</span>
+              <span className='text-4xl text-red-600 pt-2 pl-2'>Mhz FM</span>
             </span>
           </Link>
         </div>

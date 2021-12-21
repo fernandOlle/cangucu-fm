@@ -18,9 +18,9 @@ const Footer = () => {
         <span className='font-semibold text-xl flex-auto t'>
           ✆ Fale conosco <br />
           <span className=' font-normal text-xl'>
-            WhatsApp: +55 (53) 98400-0000 <br />
+            WhatsApp: +55 (53) 98415-2811 <br />
             Fixo: +55 (53) 3252-2811 <br />
-            Email: contato@cangucu.fm
+            Email: contato@canguçufm.com.br
           </span>
         </span>
         <span className='font-semibold text-xl  flex-1 content-end'>

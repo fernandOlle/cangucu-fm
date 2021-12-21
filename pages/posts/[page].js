@@ -34,29 +34,32 @@ export default function PaginatedPosts({ currentPageNumber, posts, pageInfo }) {
           {posts.map((post, index) => (
             <PostCard key={index} post={post.node} />
           ))}
-          {pageInfo.hasNextPage && (
-            <div className='flex items-center justify-center'>
-              <Link href={`/posts/${currentPageNumber + 1}`}>
-                <span className='text-center transition  shadow-2xl drop-shadow-2xl duration-500 ease-in-out transform hover:-translate-y-3 hover:font-semibold inline-block bg-yellow-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer'>
-                  Proxima Página
-                </span>
-              </Link>
-            </div>
-          )}
-
-          {pageInfo.hasPreviousPage && (
-            <div
-              className={`flex items-center ${
-                pageInfo.hasNextPage && pageInfo.hasPreviousPage ? 'ml-8' : ''
-              } justify-center`}
-            >
-              <Link href={`/posts/${currentPageNumber - 1}`}>
-                <span className='text-center transition shadow-2xl drop-shadow-2xl duration-500 ease-in-out transform hover:-translate-y-3 hover:font-semibold inline-block bg-yellow-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer'>
-                  Página Anterior
-                </span>
-              </Link>
-            </div>
-          )}
+          <div
+            className={`grid ${
+              pageInfo.hasPreviousPage && pageInfo.hasNextPage
+                ? 'grid-cols-2'
+                : ''
+            }  place-items-center  `}
+          >
+            {pageInfo.hasPreviousPage && (
+              <div className={`flex items-center justify-center`}>
+                <Link href={`/posts/${currentPageNumber - 1}`}>
+                  <span className='text-center transition shadow-2xl drop-shadow-2xl duration-500 ease-in-out transform hover:-translate-y-1 hover:font-semibold inline-block bg-yellow-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer'>
+                    Página Anterior
+                  </span>
+                </Link>
+              </div>
+            )}
+            {pageInfo.hasNextPage && (
+              <div className='flex items-center justify-center'>
+                <Link href={`/posts/${currentPageNumber + 1}`}>
+                  <span className='text-center transition  shadow-2xl drop-shadow-2xl duration-500 ease-in-out transform hover:-translate-y-1 hover:font-semibold inline-block bg-yellow-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer'>
+                    Proxima Página
+                  </span>
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className='lg:col-span-4 col-span-1'>
