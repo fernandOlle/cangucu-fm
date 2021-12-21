@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import Link from 'next/link';
 
 import { FeaturedPosts } from '../sections/index';
 import { PostCard, Categories, PostWidget, Player } from '../components';
-import { getPosts } from '../services';
+import { getLastPosts } from '../services';
 import { useWindowSize } from '../util';
 
-export default function Home({ posts }) {
+export default function Home({ posts, pageInfo }) {
   const windowSize = useWindowSize();
 
   return (
@@ -22,7 +22,17 @@ export default function Home({ posts }) {
           {posts.map((post, index) => (
             <PostCard key={index} post={post.node} />
           ))}
+          {pageInfo.hasNextPage && (
+            <div className='flex items-center justify-center'>
+              <Link href={`/posts/2`}>
+                <span className='text-center transition duration-500 ease-in-out transform hover:-translate-y-3 hover:font-semibold inline-block bg-yellow-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer'>
+                  Proxima Página
+                </span>
+              </Link>
+            </div>
+          )}
         </div>
+
         <div className='lg:col-span-4 col-span-1'>
           <div className=' lg:sticky relative lg:top-36'>
             {windowSize.width >= 1024 && <Player />}
@@ -38,10 +48,11 @@ export default function Home({ posts }) {
   );
 }
 
-// Fetch data at build time
 export async function getStaticProps() {
-  const posts = (await getPosts()) || [];
+  const postsReturned = (await getLastPosts(5, 0)) || [];
+  const posts = postsReturned.edges;
+  const pageInfo = postsReturned.pageInfo;
   return {
-    props: { posts },
+    props: { posts, pageInfo },
   };
 }
