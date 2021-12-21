@@ -8,7 +8,10 @@ const Player = () => {
         controls
         autoPlay
       >
-        <source src='http://r15.ciclano.io:4445/stream' type='audio/mpeg' />
+        <source
+          src='https://koqpwdekj182349.herokuapp.com/http://r15.ciclano.io:4445/stream'
+          type='audio/mpeg'
+        />
       </audio>
     </div>
   );
