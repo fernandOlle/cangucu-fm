@@ -25,7 +25,7 @@ const Footer = () => {
           </span>
         </span>
         <span className='font-semibold text-xl float-right'>
-          @ Ganguçu FM nas midias sociais
+          @ Ganguçu FM nas Redes
           {medias.map((media, index) => (
             <Link key={index} href={`${media.link}`}>
               <span className={`cursor-pointer flex align-center`}>
