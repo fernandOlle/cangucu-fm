@@ -15,8 +15,11 @@ import {
 } from '../../components';
 
 import { AdjacentPosts } from '../../sections';
+import { useWindowSize } from '../../util';
 
 const PostDetails = ({ post }) => {
+  const windowSize = useWindowSize();
+
   const router = useRouter();
   if (router.isFallback) {
     return <Loader />;
@@ -35,7 +38,7 @@ const PostDetails = ({ post }) => {
         <div className='col-span-1 lg:col-span-4'>
           <div className='relative lg:sticky lg:top-36'>
             <div class='hidden lg:block'>
-              <Player />
+              {windowSize.width >= 1024 && <Player />}
             </div>
             <PostWidget
               slug={post.slug}

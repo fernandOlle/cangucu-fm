@@ -1,8 +1,13 @@
+import { useState } from 'react';
+
 import { FeaturedPosts } from '../sections/index';
 import { PostCard, Categories, PostWidget, Player } from '../components';
 import { getPosts } from '../services';
+import { useWindowSize } from '../util';
 
 export default function Home({ posts }) {
+  const windowSize = useWindowSize();
+
   return (
     <div className='container mx-auto px-10 mb-8'>
       <FeaturedPosts />
@@ -14,9 +19,10 @@ export default function Home({ posts }) {
         </div>
         <div className='lg:col-span-4 col-span-1'>
           <div className=' lg:sticky relative lg:top-36'>
-            <div class='hidden lg:block'>
+            {windowSize.width >= 1024 && <Player />}
+            {/* <div class='hidden lg:block'>
               <Player />
-            </div>
+            </div> */}
             <PostWidget />
             <Categories />
           </div>

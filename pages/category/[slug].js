@@ -3,8 +3,10 @@ import { useRouter } from 'next/router';
 
 import { getCategories, getCategoryPost } from '../../services';
 import { PostCard, Categories, Loader, Player } from '../../components';
+import { useWindowSize } from '../../util';
 
 const CategoryPost = ({ posts }) => {
+  const windowSize = useWindowSize();
   const router = useRouter();
 
   if (router.isFallback) {
@@ -22,7 +24,7 @@ const CategoryPost = ({ posts }) => {
         <div className='col-span-1 lg:col-span-4'>
           <div className='relative lg:sticky lg:top-36'>
             <div class='hidden lg:block'>
-              <Player />
+              {windowSize.width >= 1024 && <Player />}
             </div>
             <Categories />
           </div>
