@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
     <div className='footerColor shadow-2xl drop-shadow-2xl bottom-0 w-full h-50 '>
-      <div className='border-t w-full flex border-red-900 rounded-2xl py-4 px-16 md:px-96 pb-10 content-between'>
+      <div className='border-t w-full flex border-red-900 rounded-2xl py-4 px-16 2xl:px-96 pb-10 content-between'>
         <span className='font-semibold text-xl flex-auto t'>
           ✆ Fale conosco <br />
           <span className=' font-normal text-xl'>
