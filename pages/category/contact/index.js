@@ -207,21 +207,23 @@ const Contact = ({ slug, post }) => {
                 <span className='font-semibold text-xl  flex-1 content-end '>
                   @ Ganguçu FM nas Redes
                   <br /> <br />
-                  {medias.map((media, index) => (
-                    <a target='_blank' key={index} href={`${media.link}`}>
-                      <span className={`cursor-pointer flex align-center`}>
-                        <img
-                          src={media.socialMediaLogos.url}
-                          className='h-10 w-10 hover:shadow-xl hover:drop-shadow-xl'
-                        />
-                        {'   '}
-                        <span className='font-normal ml-5 mt-3 duration-500 ease-in-out transform  hover:text-shadow-2xl hover:text-gray-400'>
-                          {' '}
-                          {media.name}{' '}
+                  {medias
+                    .filter((media) => media.name != 'Twitter')
+                    .map((media, index) => (
+                      <a target='_blank' key={index} href={`${media.link}`}>
+                        <span className={`cursor-pointer flex align-center`}>
+                          <img
+                            src={media.socialMediaLogos.url}
+                            className='h-10 w-10 hover:shadow-xl hover:drop-shadow-xl'
+                          />
+                          {'   '}
+                          <span className='font-normal ml-5 mt-3 duration-500 ease-in-out transform  hover:text-shadow-2xl hover:text-gray-400'>
+                            {' '}
+                            {media.name}{' '}
+                          </span>
                         </span>
-                      </span>
-                    </a>
-                  ))}
+                      </a>
+                    ))}
                 </span>
               </div>
             </div>
