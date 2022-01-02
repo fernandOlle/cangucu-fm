@@ -62,7 +62,7 @@ const Header = () => {
         </div>
       </div>
       <div className='lg:hidden  mt-2 mx-2'>
-        {windowSize.width < 1024 && <Player c />}
+        {windowSize.width < 1024 && <Player />}
       </div>
     </div>
   );

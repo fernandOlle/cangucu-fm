@@ -118,6 +118,16 @@ const Contact = ({ slug, post }) => {
             Deixe seu comentário :
           </h3>
           <div className='grid grid-cols-1 gap-4 mb-4'>
+            <input
+              type='text'
+              value={formData.name}
+              onChange={onInputChange}
+              className='py-2 px-4  border border-gray-400 w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700'
+              placeholder='Assunto'
+              name='Assunto'
+            />
+          </div>
+          <div className='grid grid-cols-1 gap-4 mb-4'>
             <textarea
               value={formData.comment || ''}
               onChange={onInputChange}
@@ -159,7 +169,7 @@ const Contact = ({ slug, post }) => {
                 htmlFor='storeData'
               >
                 {' '}
-                Salve meus dados para o próxima comentário.
+                Salve meus dados para o próximo contato.
               </label>
             </div>
           </div>
@@ -174,17 +184,19 @@ const Contact = ({ slug, post }) => {
               onClick={handlePostSubmission}
               className='transition duration-500 transition duration-500 ease-in-out transform hover:-translate-y-1  inline-block bg-yellow-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer'
             >
-              Enviar Comentário
+              Entrar em Contato
             </button>
             {showSuccessMessage && (
               <span className='text-xl float-right font-semibold mt-3 text-green-500'>
-                Comentário Enviado Para Avaliação
+                Contato Enviado Para Avaliação
               </span>
             )}
 
             <div className=' w-full xl:flex py-20 6 pb-10 content-between'>
               <span className='font-semibold text-xl flex-auto t py-8'>
-                ✆ Fale conosco <br />
+                ✆ Fale conosco
+                <br />
+                <br />
                 <span className=' font-normal text-xl'>
                   WhatsApp: +55 (53) 98415-2811 <br />
                   Fixo: +55 (53) 3252-2811 <br />
@@ -194,6 +206,7 @@ const Contact = ({ slug, post }) => {
               <div className='py-8'>
                 <span className='font-semibold text-xl  flex-1 content-end '>
                   @ Ganguçu FM nas Redes
+                  <br /> <br />
                   {medias.map((media, index) => (
                     <Link key={index} href={`${media.link}`}>
                       <span className={`cursor-pointer flex align-center`}>

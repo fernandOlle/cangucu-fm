@@ -22,7 +22,9 @@ const Footer = () => {
     >
       <div className='border-t w-full flex border-red-900 rounded-2xl py-4 px-16 2xl:px-96 pb-10 content-between'>
         <span className='font-semibold text-xl flex-auto '>
-          ✆ Fale conosco <br />
+          ✆ Fale conosco
+          <br />
+          <br />
           <span className=' font-normal text-xl'>
             WhatsApp: +55 (53) 98415-2811 <br />
             Fixo: +55 (53) 3252-2811 <br />
@@ -31,6 +33,8 @@ const Footer = () => {
         </span>
         <span className='font-semibold text-xl  flex-1 content-end'>
           @ Ganguçu FM nas Redes
+          <br />
+          <br />
           {medias.map((media, index) => (
             <Link key={index} href={`${media.link}`}>
               <span className={`cursor-pointer flex align-center`}>
