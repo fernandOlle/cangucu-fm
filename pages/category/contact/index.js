@@ -208,7 +208,7 @@ const Contact = ({ slug, post }) => {
                   @ Ganguçu FM nas Redes
                   <br /> <br />
                   {medias.map((media, index) => (
-                    <Link key={index} href={`${media.link}`}>
+                    <a target='_blank' key={index} href={`${media.link}`}>
                       <span className={`cursor-pointer flex align-center`}>
                         <img
                           src={media.socialMediaLogos.url}
@@ -220,7 +220,7 @@ const Contact = ({ slug, post }) => {
                           {media.name}{' '}
                         </span>
                       </span>
-                    </Link>
+                    </a>
                   ))}
                 </span>
               </div>
