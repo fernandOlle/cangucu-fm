@@ -2,7 +2,13 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import { getCategories, getCategoryPost } from '../../services';
-import { PostCard, Categories, Loader, Player } from '../../components';
+import {
+  PostCard,
+  Categories,
+  Loader,
+  Player,
+  PostWidget,
+} from '../../components';
 import { useWindowSize } from '../../util';
 
 const CategoryPost = ({ posts }) => {
@@ -27,6 +33,7 @@ const CategoryPost = ({ posts }) => {
               {windowSize.width >= 1024 && <Player />}
             </div>
             <Categories />
+            <PostWidget />
           </div>
         </div>
       </div>

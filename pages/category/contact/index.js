@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-import { submitComment, getSocialMedias } from '../../services';
+import { submitComment, getSocialMedias } from '../../../services';
 
 import {
   PostDetail,
@@ -12,10 +12,10 @@ import {
   CommentsForm,
   Player,
   Loader,
-} from '../../components';
+} from '../../../components';
 
-import { AdjacentPosts } from '../../sections';
-import { useWindowSize } from '../../util';
+import { AdjacentPosts } from '../../../sections';
+import { useWindowSize } from '../../../util';
 
 const Contact = ({ slug, post }) => {
   const [medias, setMedias] = useState([]);
@@ -234,8 +234,8 @@ const Contact = ({ slug, post }) => {
             {/* <div class='hidden lg:block'>
               <Player />
             </div> */}
-            <PostWidget />
             <Categories />
+            <PostWidget />
           </div>
         </div>
       </div>

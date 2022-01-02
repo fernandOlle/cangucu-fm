@@ -40,11 +40,12 @@ const PostDetails = ({ post }) => {
             <div class='hidden lg:block'>
               {windowSize.width >= 1024 && <Player />}
             </div>
+            <Categories />
+
             <PostWidget
               slug={post.slug}
               categories={post.categories.map((category) => category.slug)}
             />
-            <Categories />
           </div>
         </div>
       </div>

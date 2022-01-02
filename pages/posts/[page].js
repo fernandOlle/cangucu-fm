@@ -72,8 +72,8 @@ export default function PaginatedPosts({ currentPageNumber, posts, pageInfo }) {
           <div className=' lg:sticky relative lg:top-36'>
             {windowSize.width >= 1024 && <Player />}
 
-            <PostWidget />
             <Categories />
+            <PostWidget />
           </div>
         </div>
       </div>

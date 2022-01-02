@@ -39,8 +39,8 @@ export default function Home({ posts, pageInfo }) {
             {/* <div class='hidden lg:block'>
               <Player />
             </div> */}
-            <PostWidget />
             <Categories />
+            <PostWidget />
           </div>
         </div>
       </div>
