@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import { getSocialMedias } from '../services';
+import { useWindowSize } from '../util';
 
 const Footer = () => {
+  const windowSize = useWindowSize();
   const [medias, setMedias] = useState([]);
 
   useEffect(() => {
@@ -13,9 +15,13 @@ const Footer = () => {
   }, []);
 
   return (
-    <div className='footerColor shadow-2xl drop-shadow-2xl bottom-0 w-full h-50 '>
+    <div
+      className={`${
+        windowSize.height >= 1280 && 'fixed'
+      } footerColor mt-auto  shrink-0 shadow-2xl drop-shadow-2xl bottom-0 w-full h-50 `}
+    >
       <div className='border-t w-full flex border-red-900 rounded-2xl py-4 px-16 2xl:px-96 pb-10 content-between'>
-        <span className='font-semibold text-xl flex-auto t'>
+        <span className='font-semibold text-xl flex-auto '>
           ✆ Fale conosco <br />
           <span className=' font-normal text-xl'>
             WhatsApp: +55 (53) 98415-2811 <br />
