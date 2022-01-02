@@ -54,6 +54,28 @@ export const getPosts = async () => {
   return result.postsConnection.edges;
 };
 
+export const getAuthors = async () => {
+  const query = gql`
+    query MyQuery {
+      authors {
+        bio
+        facebook
+        instagram
+        name
+        photo {
+          url
+        }
+        twitter
+        whatsapp
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+
+  return result.authors;
+};
+
 export const getLastPosts = async (limit, offset) => {
   const query = gql`
     query MyQuery($limit: Int!, $offset: Int!) {

@@ -1,29 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Image from 'next/image';
 
-import { submitComment, getSocialMedias } from '../../services';
+import { getSocialMedias, getAuthors } from '../../services';
 
-import {
-  PostDetail,
-  Categories,
-  PostWidget,
-  Author,
-  Comments,
-  CommentsForm,
-  Player,
-  Loader,
-} from '../../components';
+import { Categories, PostWidget, Player } from '../../components';
 
-import { AdjacentPosts } from '../../sections';
-import { useWindowSize } from '../../util';
+import { useWindowSize, grpahCMSImageLoader } from '../../util';
 
 const ContactCard = ({ slug, post }) => {
   const [medias, setMedias] = useState([]);
-  const [showAge, setShowAge] = useState(true);
 
   useEffect(() => {
     getSocialMedias().then((newMedias) => {
       setMedias(newMedias);
+    });
+  }, []);
+
+  const [authors, setAuthors] = useState([]);
+
+  useEffect(() => {
+    getAuthors().then((newAuthors) => {
+      setAuthors(newAuthors);
     });
   }, []);
 
@@ -36,22 +33,95 @@ const ContactCard = ({ slug, post }) => {
       } mb-8`}
     >
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
-        <div className=' lg:col-span-8 bg-sky-500/[.06] col-span-1 shadow-lg rounded-lg p-8 pb-12 mb-8'>
-          {medias.map((media, index) => (
-            <div className='flex p-2 color-white bg-yellow-700 rounded-lg mb-8'>
-              <img
-                src={media.socialMediaLogos.url}
-                className='p-16'
-                alt='profile'
-              />
-              <div className='user-details'>
-                <p>Name:{media.name}</p>
-                <p>Email:{media.link}</p>
-                <button onClick={() => setShowAge(!showAge)}>Toggle Age</button>
-                {showAge && <p>Age:{media.name}</p>}
+        <div className=' lg:col-span-4  col-span-1 shadow-lg rounded-lg  mb-8'>
+          {authors
+            .filter((media, e) => e < authors.length / 2)
+            .map((author, index) => (
+              <div className='text-center mt-20 shadow-2xl drop-shadow-2xl mb-8 p-4 relative rounded-lg bg-red-400 bg-opacity-20'>
+                <div className='absolute left-0 right-0 -top-14'>
+                  <Image
+                    unoptimized
+                    loader={grpahCMSImageLoader}
+                    alt={author.name}
+                    height='250px'
+                    width='400px'
+                    className='align-middle rounded-2xl'
+                    src={author.photo.url}
+                  />
+                </div>
+                <h3 className='text-white mt-48 mb-4 text-xl font-bold'>
+                  {author.name}
+                </h3>
+                <p className='text-white text-ls mb-4 break-words'>
+                  {author.bio}
+                </p>
+
+                {author.twitter &&
+                  medias.map((media, index) => (
+                    <a
+                      href={media.href}
+                      target='_blank'
+                      className='m-1 p-1 cursor-pointer'
+                    >
+                      <Image
+                        unoptimized
+                        loader={grpahCMSImageLoader}
+                        alt={media.name}
+                        height='40px'
+                        width='40px'
+                        className='align-middle rounded-full'
+                        src={media.socialMediaLogos.url}
+                      />
+                    </a>
+                  ))}
               </div>
-            </div>
-          ))}
+            ))}
+        </div>
+
+        <div className=' lg:col-span-4 col-span-1 shadow-lg  rounded-lg  mb-8'>
+          {authors
+            .filter((media, e) => e >= authors.length / 2)
+            .map((author, index) => (
+              <div className='text-center mt-20 shadow-2xl drop-shadow-2xl mb-8 p-4 relative rounded-lg bg-red-400 bg-opacity-20'>
+                <div className='absolute left-0 right-0 -top-14'>
+                  <Image
+                    unoptimized
+                    loader={grpahCMSImageLoader}
+                    alt={author.name}
+                    height='250px'
+                    width='400px'
+                    className='align-middle rounded-2xl'
+                    src={author.photo.url}
+                  />
+                </div>
+                <h3 className='text-white mt-48 mb-4 text-xl font-bold'>
+                  {author.name}
+                </h3>
+                <p className='text-white text-ls  break-words'>{author.bio}</p>
+
+                {author.twitter ? (
+                  medias.map((media, index) => (
+                    <a
+                      href={media.href}
+                      target='_blank'
+                      className='m-1 p-1 cursor-pointer'
+                    >
+                      <Image
+                        unoptimized
+                        loader={grpahCMSImageLoader}
+                        alt={media.name}
+                        height='40px'
+                        width='40px'
+                        className='align-middle rounded-full'
+                        src={media.socialMediaLogos.url}
+                      />
+                    </a>
+                  ))
+                ) : (
+                  <div className='h-16 '> </div>
+                )}
+              </div>
+            ))}
         </div>
 
         <div className='lg:col-span-4 col-span-1'>
@@ -70,3 +140,20 @@ const ContactCard = ({ slug, post }) => {
 };
 
 export default ContactCard;
+
+export async function getStaticProps({ params }) {
+  const data = await getPostDetails(params.slug);
+
+  return {
+    props: { post: data },
+  };
+}
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+
+  return {
+    paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
+    fallback: true,
+  };
+}
