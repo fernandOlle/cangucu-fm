@@ -1,15 +1,15 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { getCategories, getCategoryPost } from '../../services';
+import { getCategories, getCategoryPost } from '../services';
 import {
   PostCard,
   Categories,
   Loader,
   Player,
   PostWidget,
-} from '../../components';
-import { useWindowSize } from '../../util';
+} from '../components';
+import { useWindowSize } from '../util';
 
 const CategoryPost = ({ posts }) => {
   const windowSize = useWindowSize();
