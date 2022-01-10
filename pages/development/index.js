@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-import { getSocialMedias, getAuthors } from '../../../services';
+import { getSocialMedias, getAuthors } from '../../services';
 
-import { Categories, PostWidget, Player } from '../../../components';
+import { Categories, PostWidget, Player } from '../../components';
 
-import { useWindowSize, grpahCMSImageLoader } from '../../../util';
+import { useWindowSize, grpahCMSImageLoader } from '../../util';
 
 const ContactCard = ({ slug, post }) => {
   const [medias, setMedias] = useState([]);
