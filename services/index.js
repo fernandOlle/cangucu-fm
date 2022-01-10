@@ -59,14 +59,16 @@ export const getAuthors = async () => {
     query MyQuery {
       authors {
         bio
-        facebook
-        instagram
         name
         photo {
           url
         }
-        twitter
-        whatsapp
+        socialMedias {
+          socialMediaLogos {
+            url
+          }
+          link
+        }
       }
     }
   `;
@@ -137,13 +139,14 @@ export const getCategories = async () => {
 
 export const getSocialMedias = async () => {
   const query = gql`
-    query GetMedias {
+    query MyQuery {
       socialMedias {
         name
+        link
         socialMediaLogos {
           url
         }
-        link
+        type
       }
     }
   `;

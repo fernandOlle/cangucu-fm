@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-import { getSocialMedias, getAuthors } from '../../services';
+import { getSocialMedias, getAuthors } from '../../../services';
 
-import { Categories, PostWidget, Player } from '../../components';
+import { Categories, PostWidget, Player } from '../../../components';
 
-import { useWindowSize, grpahCMSImageLoader } from '../../util';
+import { useWindowSize, grpahCMSImageLoader } from '../../../util';
 
 const ContactCard = ({ slug, post }) => {
   const [medias, setMedias] = useState([]);
@@ -56,10 +56,10 @@ const ContactCard = ({ slug, post }) => {
                   {author.bio}
                 </p>
 
-                {author.twitter &&
-                  medias.map((media, index) => (
+                {author.socialMedias.length > 1 ? (
+                  author.socialMedias.map((media, index) => (
                     <a
-                      href={media.href}
+                      href={media.link}
                       target='_blank'
                       className='m-1 p-1 cursor-pointer'
                     >
@@ -73,7 +73,10 @@ const ContactCard = ({ slug, post }) => {
                         src={media.socialMediaLogos.url}
                       />
                     </a>
-                  ))}
+                  ))
+                ) : (
+                  <div className='h-16 '> . </div>
+                )}
               </div>
             ))}
         </div>
@@ -99,10 +102,10 @@ const ContactCard = ({ slug, post }) => {
                 </h3>
                 <p className='text-white text-ls  break-words'>{author.bio}</p>
 
-                {author.twitter ? (
-                  medias.map((media, index) => (
+                {author.socialMedias.length > 1 ? (
+                  author.socialMedias.map((media, index) => (
                     <a
-                      href={media.href}
+                      href={media.link}
                       target='_blank'
                       className='m-1 p-1 cursor-pointer'
                     >

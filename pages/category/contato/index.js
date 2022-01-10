@@ -192,7 +192,7 @@ const Contact = ({ slug, post }) => {
               </span>
             )}
 
-            <div className=' w-full xl:flex py-20 6 pb-10 content-between'>
+            <div className=' w-full xl:flex pt-14  content-between'>
               <span className='font-semibold text-xl flex-auto t py-8'>
                 ✆ Fale conosco
                 <br />
@@ -208,7 +208,7 @@ const Contact = ({ slug, post }) => {
                   @ Ganguçu FM nas Redes
                   <br /> <br />
                   {medias
-                    .filter((media) => media.name != 'Twitter')
+                    .filter((media) => media.type === 'radio')
                     .map((media, index) => (
                       <a target='_blank' key={index} href={`${media.link}`}>
                         <span className={`cursor-pointer flex align-center`}>

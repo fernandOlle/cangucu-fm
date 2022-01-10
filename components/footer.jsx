@@ -36,7 +36,7 @@ const Footer = () => {
           <br />
           <br />
           {medias
-            .filter((media) => media.name != 'Twitter')
+            .filter((media) => media.type === 'radio')
             .map((media, index) => (
               <a target='_blank' key={index} href={`${media.link}`}>
                 <span className={`cursor-pointer flex align-center`}>
