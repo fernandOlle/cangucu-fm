@@ -75,7 +75,7 @@ const ContactCard = ({ slug, post }) => {
                     </a>
                   ))
                 ) : (
-                  <div className='h-16 '> . </div>
+                  <div className='h-8 '> . </div>
                 )}
               </div>
             ))}
