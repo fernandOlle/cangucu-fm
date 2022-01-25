@@ -32,7 +32,7 @@ const Footer = () => {
           </span>
         </span>
         <span className='font-semibold text-xl  flex-1 content-end'>
-          @Redes Sociais
+          @Redes So
           <br />
           <br />
           {medias
