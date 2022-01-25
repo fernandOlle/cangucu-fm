@@ -20,7 +20,7 @@ const Footer = () => {
         windowSize.height >= 1280 && 'fixed'
       } footerColor mt-auto  shrink-0 shadow-2xl drop-shadow-2xl bottom-0 w-full h-50 `}
     >
-      <div className='border-t w-full flex border-red-900 rounded-2xl py-4 px-16 2xl:px-96 pb-10 content-between'>
+      <div className='border-t w-full flex border-red-900 rounded-2xl py-4 px-12 2xl:px-96 pb-10 content-between'>
         <span className='font-semibold text-xl flex-auto '>
           ✆Fale conosco
           <br />
