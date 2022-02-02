@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 import { getSocialMedias } from '../services';
 import { useWindowSize } from '../util';

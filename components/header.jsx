@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import 'react-multi-carousel/lib/styles.css';
