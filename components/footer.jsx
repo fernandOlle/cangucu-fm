@@ -21,7 +21,7 @@ const Footer = () => {
     >
       <div className='border-t w-full flex border-red-900 rounded-2xl py-4 px-16 2xl:px-96 pb-10 content-between'>
         <span className='font-semibold text-xl flex-auto '>
-          ✆ Fale conosco
+          ✆Fale conosco
           <br />
           <br />
           <span className=' font-normal text-xl'>
@@ -31,7 +31,7 @@ const Footer = () => {
           </span>
         </span>
         <span className='font-semibold text-xl  flex-1 content-end'>
-          @ Ganguçu FM nas Redes
+          @Redes_Sociais
           <br />
           <br />
           {medias
