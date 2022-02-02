@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import moment from 'moment';
 
 const PostDetail = ({ post }) => {
@@ -23,7 +25,7 @@ const PostDetail = ({ post }) => {
         return (
           <h3 key={index} className='text-xl font-semibold mb-4'>
             {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
+              <Fragment key={i}>{item}</Fragment>
             ))}
           </h3>
         );
@@ -31,7 +33,7 @@ const PostDetail = ({ post }) => {
         return (
           <p key={index} className='mb-8'>
             {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
+              <Fragment key={i}>{item}</Fragment>
             ))}
           </p>
         );
@@ -39,7 +41,7 @@ const PostDetail = ({ post }) => {
         return (
           <h4 key={index} className='text-md font-semibold mb-4'>
             {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
+              <Fragment key={i}>{item}</Fragment>
             ))}
           </h4>
         );
